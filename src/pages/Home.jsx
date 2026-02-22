@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductGrid from '../components/product/ProductGrid';
 import { products } from '../data/products';
-import hero from '../assets/images/hero/hero.jpg';
+import hero from '../assets/images/hero/hero.webp';
 
 const Home = () => {
   const featuredProducts = products.slice(0, 3);

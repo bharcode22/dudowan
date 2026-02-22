@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Coffee, Instagram, Facebook, Twitter, Mail } from 'lucide-react';
 import Container from './Container';
-import logo from '../../assets/images/logo/dudowan logo.png';
+import logo from '../../assets/images/logo/dudowan logo.webp';
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {['About', 'Products', 'Brew Guide', 'Contact'].map((item) => (
+              {['About', 'Products', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item.toLowerCase().replace(' ', '-')}`}

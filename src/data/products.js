@@ -1,4 +1,4 @@
-import prodeukImg from '../assets/images/products/prodeuk.jpg';
+import prodeukImg from '../assets/images/products/product.webp';
 
 export const products = [
   {

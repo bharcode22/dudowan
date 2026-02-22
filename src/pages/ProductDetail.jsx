@@ -59,7 +59,7 @@ const ProductDetail = () => {
   const handleWhatsAppOrder = () => {
     const message = `Halo, saya ingin memesan:\n\n${name} - ${selectedSize}\nJumlah: ${quantity}\nTotal: ${formatPrice(price * quantity)}`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/6281234567890?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/6281338440900?text=${encodedMessage}`, '_blank');
   };
 
   return (

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Coffee } from 'lucide-react';
 import Container from './Container';
-import dudowan_logo from '../../assets/images/logo/dudowan logo.png';
+import dudowan_logo from '../../assets/images/logo/dudowan logo.webp';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -34,7 +34,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telepon / WA",
-      details: ["+62 813-3844-0900"]
+      details: ["+6281338440900"]
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -73,7 +73,7 @@ const Contact = () => {
     { 
       icon: <MessageCircle className="w-5 h-5" />, 
       name: "WhatsApp", 
-      username: "+62 813-3844-0900",
+      username: "+6281338440900",
       link: "https://wa.me/+6281338440900",
       color: "hover:text-green-500"
     }
@@ -88,7 +88,7 @@ const Contact = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+62 813-3844-0900"; // Ganti dengan nomor WA Anda
+    const phoneNumber = "+6281338440900"; // Ganti dengan nomor WA Anda
     const message = "Halo dudowan, saya ingin bertanya tentang produk kopi...";
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
@@ -115,7 +115,7 @@ const Contact = () => {
 ${formData.message}
     `.trim();
 
-    const phoneNumber = "6281234567890"; // Ganti dengan nomor WA Anda
+    const phoneNumber = "6281338440900"; // Ganti dengan nomor WA Anda
     const encodedMessage = encodeURIComponent(message);
     
     // Simulasi loading sebentar
@@ -143,7 +143,7 @@ ${formData.message}
   ];
 
   const handleQuickMessage = (message) => {
-    const phoneNumber = "6281234567890";
+    const phoneNumber = "+62813-3844-0900";
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };

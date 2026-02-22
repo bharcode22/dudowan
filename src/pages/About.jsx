@@ -1,7 +1,7 @@
 import { Coffee, Heart, Users, Award } from 'lucide-react';
 import Container from '../components/layout/Container';
 import SectionTitle from '../components/ui/SectionTitle';
-import about_image from '../assets/images/logo/about_image.jpg';
+import about_image from '../assets/images/logo/about_image.webp';
 
 const About = () => {
   const values = [
@@ -110,9 +110,18 @@ const About = () => {
             subtitle="Kopi dari berbagai daerah dengan karakter uniknya"
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['Aceh', 'Bali', 'Sulawesi', 'Jawa', 'Flores', 'Papua', 'Sumatera', 'Lampung'].map((region) => (
-              <div key={region} className="glass-dark rounded-xl p-4 text-center">
-                <span className="text-white font-medium">{region}</span>
+            {[
+              'Gayo',
+              'Kintamani',
+              'Toraja',
+              'Java',
+              'Flores Bajawa',
+              'Wamena',
+              'Mandheling',
+              'Lampung Robusta',
+            ].map((coffee) => (
+              <div key={coffee} className="glass-dark rounded-xl p-4 text-center">
+                <span className="text-white font-medium">{coffee}</span>
               </div>
             ))}
           </div>
