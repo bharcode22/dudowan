@@ -1,0 +1,125 @@
+import { Coffee, Heart, Users, Award } from 'lucide-react';
+import Container from '../components/layout/Container';
+import SectionTitle from '../components/ui/SectionTitle';
+import about_image from '../assets/images/logo/about_image.jpg';
+
+const About = () => {
+  const values = [
+    {
+      icon: <Coffee className="w-8 h-8" />,
+      title: "Kualitas Terbaik",
+      description: "Kami hanya memilih biji kopi grade-1 dari petani terbaik di Indonesia"
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Cinta Lokal",
+      description: "Mendukung petani lokal dan memperkenalkan kopi Indonesia ke dunia"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Komunitas",
+      description: "Membangun komunitas pecinta kopi yang saling berbagi pengetahuan"
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Konsistensi",
+      description: "Menjaga konsistensi rasa di setiap batch roasting"
+    }
+  ];
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 g-linear-to-b from-coffee-900/20 to-transparent" />
+        <Container className="relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Cerita <span className="text-coffee-400">Dudowan</span>
+            </h1>
+            <p className="text-lg text-white/60 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-20">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">Perjalanan Kami</h2>
+              <div className="space-y-4 text-white/60">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                  ex ea commodo consequat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                  aliquip ex ea commodo consequat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div className="glass-dark rounded-2xl overflow-hidden">
+              <img 
+                src={about_image}
+                alt="Coffee plantation"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-white/5">
+        <Container>
+          <SectionTitle 
+            title="Nilai-Nilai Kami"
+            subtitle="Prinsip yang kami pegang dalam setiap langkah"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <div key={index} className="glass-card rounded-xl p-6 text-center">
+                <div className="inline-flex p-3 bg-coffee-500/20 rounded-xl text-coffee-400 mb-4">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{value.title}</h3>
+                <p className="text-white/60">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Origin Highlight */}
+      <section className="py-20">
+        <Container>
+          <SectionTitle 
+            title="Jelajahi Nusantara"
+            subtitle="Kopi dari berbagai daerah dengan karakter uniknya"
+          />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Aceh', 'Bali', 'Sulawesi', 'Jawa', 'Flores', 'Papua', 'Sumatera', 'Lampung'].map((region) => (
+              <div key={region} className="glass-dark rounded-xl p-4 text-center">
+                <span className="text-white font-medium">{region}</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+    </div>
+  );
+};
+
+export default About;
