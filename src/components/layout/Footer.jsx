@@ -43,7 +43,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>Desa Ulian, Kintamani, Bangli</li>
               <li>Bali, Indonesia</li>
-              <li>dudowan@@gmail.com</li>
+              <li>dudowan@gmail.com</li>
               <li>+62 813-3844-0900</li>
             </ul>
           </div>
