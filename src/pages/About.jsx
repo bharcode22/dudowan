@@ -116,7 +116,6 @@ const About = () => {
               'Anaerobic Natural',
               'Fully Washed',
               'Natural Ulian',
-              'Wamena',
             ].map((coffee) => (
               <div key={coffee} className="glass-dark rounded-xl p-4 text-center">
                 <span className="text-white font-medium">{coffee}</span>
