@@ -24,7 +24,7 @@ const Navbar = () => {
           
           <Link to="/" className="flex items-center space-x-2">
             <img src={dudowan_logo} alt="Dudowan Logo" className="h-10 w-auto" />
-            <span className="font-bold text-xl text-white">Dudowan</span>
+            <span className="font-bold text-xl text-white">Doru Coffee</span>
           </Link>
 
           {/* Desktop Menu */}

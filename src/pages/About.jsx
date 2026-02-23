@@ -102,23 +102,21 @@ const About = () => {
         </Container>
       </section>
 
-      {/* Origin Highlight */}
+      {/* Product Highlight */}
       <section className="py-20">
         <Container>
           <SectionTitle 
-            title="Jelajahi Nusantara"
-            subtitle="Kopi dari berbagai daerah dengan karakter uniknya"
+            title="Produk yang kami sediakan"
+            subtitle="Kopi Ulian dari berbagai pengolahan dengan karakter uniknya"
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'Gayo',
-              'Kintamani',
-              'Toraja',
-              'Java',
-              'Flores Bajawa',
+              'Natural',
+              'Anaerobic Honey',
+              'Anaerobic Natural',
+              'Fully Washed',
+              'Natural Ulian',
               'Wamena',
-              'Mandheling',
-              'Lampung Robusta',
             ].map((coffee) => (
               <div key={coffee} className="glass-dark rounded-xl p-4 text-center">
                 <span className="text-white font-medium">{coffee}</span>

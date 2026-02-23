@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Container from '../components/layout/Container';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProductGrid from '../components/product/ProductGrid';
-import ProductFilter from '../components/product/ProductFilter';
+// import ProductFilter from '../components/product/ProductFilter';
 import { products } from '../data/products';
 
 const Products = () => {
@@ -32,12 +32,12 @@ const Products = () => {
 
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar Filter */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <ProductFilter onFilterChange={handleFilterChange} />
-          </div>
+          </div> */}
 
           {/* Product Grid */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             {/* Result Info */}
             <div className="flex justify-between items-center mb-6">
               <p className="text-white/60">

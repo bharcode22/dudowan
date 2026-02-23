@@ -64,10 +64,10 @@ const ProductCard = ({ product }) => {
         </p>
 
         {/* Weight & Price */}
-        <div className="flex justify-between items-center mb-4">
+        {/* <div className="flex justify-between items-center mb-4">
           <span className="text-sm text-white/40">{weight}</span>
           <span className="text-lg font-bold text-white">{formatPrice(price)}</span>
-        </div>
+        </div> */}
 
         {/* Action Button */}
         <Link 
