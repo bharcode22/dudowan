@@ -1,9 +1,38 @@
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Coffee } from 'lucide-react';
+import { ShoppingBag, Coffee, ChevronLeft, ChevronRight } from 'lucide-react';
 import Badge from '../ui/Badge';
 
 const ProductCard = ({ product }) => {
-  const { id, name, origin, roastLevel, price, weight, description, image } = product;
+  const { id, name, origin, roastLevel, price, weight, description, images } = product;
+  const [imgIndex, setImgIndex] = useState(0);
+  const touchStartX = useRef(null);
+
+  const hasMultiple = images && images.length > 1;
+
+  const prev = (e) => {
+    e.preventDefault();
+    setImgIndex(i => (i - 1 + images.length) % images.length);
+  };
+
+  const next = (e) => {
+    e.preventDefault();
+    setImgIndex(i => (i + 1) % images.length);
+  };
+
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 40) setImgIndex(i => (i + 1) % images.length);
+    else if (diff < -40) setImgIndex(i => (i - 1 + images.length) % images.length);
+    touchStartX.current = null;
+  };
+
+  const image = images?.[imgIndex];
 
   // Function to determine badge variant based on roast level
   const getRoastVariant = (roast) => {
@@ -27,9 +56,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="glass-card rounded-xl overflow-hidden group hover:scale-105 transition-all duration-300">
       {/* Image Container */}
-      <div className="relative h-48 overflow-hidden bg-white/5">
+      <div
+        className="relative h-48 overflow-hidden bg-white/5"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         {image ? (
-          <img 
+          <img
             src={image}
             alt={name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -43,7 +76,37 @@ const ProductCard = ({ product }) => {
             <Coffee className="w-12 h-12 text-white/20" />
           </div>
         )}
-        
+
+        {/* Prev/Next arrows - hanya muncul saat hover jika ada >1 gambar */}
+        {hasMultiple && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+              {images.map((_, i) => (
+                <span
+                  key={i}
+                  className={`block w-1.5 h-1.5 rounded-full transition-all ${
+                    i === imgIndex ? 'bg-white' : 'bg-white/40'
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
         {/* Roast Level Badge */}
         <div className="absolute top-3 right-3">
           <Badge variant={getRoastVariant(roastLevel)}>

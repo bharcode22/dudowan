@@ -10,6 +10,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('250g');
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   
   const product = products.find(p => p.id === parseInt(id));
 
@@ -24,18 +25,21 @@ const ProductDetail = () => {
     );
   }
 
-  const { 
-    name, 
-    origin, 
-    roastLevel, 
-    price, 
-    weight, 
-    description, 
-    flavorNotes, 
-    brewMethods, 
-    grind, 
-    stock 
+  const {
+    name,
+    origin,
+    roastLevel,
+    price,
+    weight,
+    description,
+    flavorNotes,
+    brewMethods,
+    grind,
+    stock,
+    images
   } = product;
+
+  const currentImage = images?.[selectedImageIndex] || images?.[0];
 
   const sizes = ['250g', '500g', '1kg'];
 
@@ -75,15 +79,39 @@ const ProductDetail = () => {
         </Link>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Column - Image */}
+          {/* Left Column - Image Gallery */}
           <div>
-            <div className="glass-dark rounded-2xl overflow-hidden aspect-square">
-              <img 
-                src={product.image || 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'} 
+            {/* Main Image */}
+            <div className="glass-dark rounded-2xl overflow-hidden aspect-square mb-4">
+              <img
+                src={currentImage || 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'}
                 alt={name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-opacity duration-300"
               />
             </div>
+
+            {/* Thumbnails */}
+            {images && images.length > 1 && (
+              <div className="flex gap-3">
+                {images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImageIndex(index)}
+                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
+                      selectedImageIndex === index
+                        ? 'border-coffee-400 opacity-100'
+                        : 'border-white/10 opacity-50 hover:opacity-80'
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${name} ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right Column - Details */}
