@@ -43,7 +43,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>Desa Ulian, Kintamani, Bangli</li>
               <li>Bali, Indonesia</li>
-              <li>dudowan@gmail.com</li>
+              <li>gedeputraswastika@gmail.com</li>
               <li>+62 813-3844-0900</li>
             </ul>
           </div>
@@ -51,18 +51,37 @@ const Footer = () => {
           {/* Social Media */}
           <div>
             <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+
+            <div className="flex flex-col space-y-3 text-sm">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/search/top?q=I%20Made%20Surawan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
+                <span>I Made Surawan</span>
               </a>
-              <a href="#" className="hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/dorucoffeebean"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+                <span>dorucoffeebean</span>
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+
+              {/* Email */}
+              <a
+                href="mailto:gedeputraswastika@gmail.com"
+                className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+              >
                 <Mail className="h-5 w-5" />
+                <span>gedeputraswastika@gmail.com</span>
               </a>
             </div>
           </div>

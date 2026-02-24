@@ -39,7 +39,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["dudowan@gmail.com"]
+      details: ["gedeputraswastika@gmail.com"]
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -52,23 +52,16 @@ const Contact = () => {
     { 
       icon: <Instagram className="w-5 h-5" />, 
       name: "Instagram", 
-      username: "@dudowan",
-      link: "https://instagram.com/dudowan",
+      username: "@dorucoffeebean",
+      link: "https://instagram.com/dorucoffeebean",
       color: "hover:text-pink-500"
     },
     { 
       icon: <Facebook className="w-5 h-5" />, 
       name: "Facebook", 
-      username: "dudowan",
-      link: "https://facebook.com/kopingopi",
+      username: "I Made Surawan",
+      link: "https://www.facebook.com/search/top?q=I%20Made%20Surawan",
       color: "hover:text-blue-500"
-    },
-    { 
-      icon: <Twitter className="w-5 h-5" />, 
-      name: "Twitter", 
-      username: "@kopingopi",
-      link: "https://twitter.com/kopingopi",
-      color: "hover:text-blue-400"
     },
     { 
       icon: <MessageCircle className="w-5 h-5" />, 
