@@ -54,7 +54,7 @@ const Footer = () => {
 
             <div className="flex flex-col space-y-3 text-sm">
               {/* Facebook */}
-              <a
+              {/* <a
                 href="https://www.facebook.com/search/top?q=I%20Made%20Surawan"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -62,7 +62,7 @@ const Footer = () => {
               >
                 <Facebook className="h-5 w-5" />
                 <span>I Made Surawan</span>
-              </a>
+              </a> */}
 
               {/* Instagram */}
               <a

@@ -56,13 +56,13 @@ const Contact = () => {
       link: "https://instagram.com/dorucoffeebean",
       color: "hover:text-pink-500"
     },
-    { 
-      icon: <Facebook className="w-5 h-5" />, 
-      name: "Facebook", 
-      username: "I Made Surawan",
-      link: "https://www.facebook.com/search/top?q=I%20Made%20Surawan",
-      color: "hover:text-blue-500"
-    },
+    // { 
+    //   icon: <Facebook className="w-5 h-5" />, 
+    //   name: "Facebook", 
+    //   username: "I Made Surawan",
+    //   link: "https://www.facebook.com/search/top?q=I%20Made%20Surawan",
+    //   color: "hover:text-blue-500"
+    // },
     { 
       icon: <MessageCircle className="w-5 h-5" />, 
       name: "WhatsApp", 
