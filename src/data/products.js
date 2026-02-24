@@ -1,9 +1,11 @@
 import Fully_Washed from '../assets/images/products/fully-wash.jpeg';
 import Fully_Washed2 from '../assets/images/products/fully-wash2.jpeg';
 import Honey from '../assets/images/products/honey.jpeg';
+import Honey2 from '../assets/images/products/honey2.jpeg';
 import Natural_Ulian from '../assets/images/products/natural.jpeg';
 import Natural_Ulian2 from '../assets/images/products/natural2.jpeg';
 import Anaerobic_Honey from '../assets/images/products/anaerob-honey.jpeg';
+import Anaerobic_Honey2 from '../assets/images/products/anaerob-honey2.jpeg';
 import Anaerobic_Natural from '../assets/images/products/anaerob-natural.jpeg';
 import Anaerobic_Natural2 from '../assets/images/products/anaerob-natural2.jpeg';
 
@@ -35,7 +37,7 @@ export const products = [
     flavorNotes: ["Citrus", "Honey", "Brown Sugar"],
     brewMethods: ["V60", "Aeropress", "Kalita"],
     grind: "Medium",
-    images: [Honey],
+    images: [Honey, Honey2],
     stock: 10
   },
   {
@@ -65,7 +67,7 @@ export const products = [
     flavorNotes: ["Caramel", "Tropical Fruit", "Sweet"],
     brewMethods: ["V60", "Aeropress", "French Press"],
     grind: "Medium",
-    images: [Anaerobic_Honey],
+    images: [Anaerobic_Honey, Anaerobic_Honey2],
     stock: 20
   },
   {

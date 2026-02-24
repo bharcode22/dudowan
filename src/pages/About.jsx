@@ -35,11 +35,10 @@ const About = () => {
         <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Cerita <span className="text-coffee-400">Dudowan</span>
+              Cerita <span className="text-coffee-400">Doru Coffee</span>
             </h1>
             <p className="text-lg text-white/60 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Menghadirkan kopi terbaik dari petani lokal untuk penikmat kopi sejati.
             </p>
           </div>
         </Container>
@@ -52,21 +51,20 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Perjalanan Kami</h2>
               <div className="space-y-4 text-white/60">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
-                  ex ea commodo consequat.
+                <p className='text-justify'>
+                  Perkenalkan saya doru berasal dari Desa Ulian, Kintamai, Bangli, Bali saya sebagai petani kopi sekaligus sebagai prosesor kopi, 
+                  atau yang memproses kopi.
                 </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                  aliquip ex ea commodo consequat.
+                <p className='text-justify'>
+                  Saya sendiri berdiri sebagai prosesor kopi sejak dari tahun 2019. wilayah Desa Ulian terdiri dari luas wilayah 353 hektar, dengan ketinggiang 1200 - 1400 di atas permukaan laut, 
+                  dengan ketinggian ini memang sangat cocok untuk di tanami kopi arabica selain itu wilayah desa kami juga di kelilingi sumber mata air, 
+                  sehingga menciptakan kesuburan tanah yg sangat tinggi
                 </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p className='text-justify'>
+                  Awal masuknya kopi ke daerah desa kami pada tahun 1980 an dengan varietas yg 
+                  di tanam varietas Usda selang berjalanya waktu dan perkembangan jaman petani melakukan penelitian 
+                  dan menemukan varietas yg baru padah tahun 2020 yg di namai oleh petani varietas B1.20
+                  2 varietas ini lah yg kami kembangkan dan kami pertahankan di wilayah desa kami
                 </p>
               </div>
             </div>

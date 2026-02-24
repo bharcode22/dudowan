@@ -32,8 +32,6 @@ const ProductCard = ({ product }) => {
     touchStartX.current = null;
   };
 
-  const image = images?.[imgIndex];
-
   // Function to determine badge variant based on roast level
   const getRoastVariant = (roast) => {
     switch(roast.toLowerCase()) {
@@ -61,34 +59,51 @@ const ProductCard = ({ product }) => {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {image ? (
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80';
+        {/* Sliding strip */}
+        {images && images.length > 0 ? (
+          <div
+            className="flex h-full transition-transform duration-300 ease-in-out"
+            style={{
+              width: `${images.length * 100}%`,
+              transform: `translateX(-${imgIndex * (100 / images.length)}%)`,
             }}
-          />
+          >
+            {images.map((img, i) => (
+              <div
+                key={i}
+                className="h-full shrink-0"
+                style={{ width: `${100 / images.length}%` }}
+              >
+                <img
+                  src={img}
+                  alt={`${name} ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80';
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <Coffee className="w-12 h-12 text-white/20" />
           </div>
         )}
 
-        {/* Prev/Next arrows - hanya muncul saat hover jika ada >1 gambar */}
+        {/* Prev/Next arrows - selalu tampil di mobile, muncul saat hover di desktop */}
         {hasMultiple && (
           <>
             <button
               onClick={prev}
-              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 transition-opacity md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={next}
-              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full p-0.5 transition-opacity md:opacity-0 md:group-hover:opacity-100"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
